@@ -18,12 +18,39 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(html|php)$/
+                test: /\.(html|php)$/,
                 loader: "html-loader"
             },
             {
-
+                test: /\.(png|jpeg|gif|svg|woff|woff2|ttf|eot|ico)$/,
+                loader: "url-loader?limit=100000"
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({ fallbackLoader: "style-loader", loader: "css-loader?minimize=true" })
+            },
+            {
+                test: /\.ts$/,
+                loader: ["awesome-typescript-loader"]
             }
         ]
-    }
+    },
+
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ["app", "vendor", "polyfills"]
+        }),
+
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        }),
+
+        new HtmlWebpackPlugin({
+            inject: "head",
+            filename: helpers.root("public_html") + "/index.html",
+            template: helpers.root("webpack") + "/index.html"
+        })
+    ]
 }
