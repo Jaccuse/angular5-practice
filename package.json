@@ -1,10 +1,9 @@
 {
   "name": "angular5-practice",
   "version": "3.0.0",
-  "license": "Apache-2.0",
   "author": {
     "name": "Jack Arnold",
-    "email": "guck@jack-arnold.com"
+    "email": "guck@jack-arnold.com",
     "url": ""
   },
   "scripts": {
@@ -32,6 +31,7 @@
     "@types/node": "^8.0.51",
     "awesome-typescript-loader": "^3.3.0",
     "bootstrap-loader": "^2.2.0",
+    "bootstrap": "^4.0.0-beta.2",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
@@ -46,6 +46,12 @@
     "raw-loader": "^0.5.1",
     "resolve-url-loader": "^2.2.0",
     "rimraf": "^2.6.2",
-
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "typescript": "^2.6.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4",
+    "webpack-merge": "^4.1.1"
   }
 }
